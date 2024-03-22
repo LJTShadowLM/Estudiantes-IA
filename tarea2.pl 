@@ -1,0 +1,15 @@
+% Hechos
+pieza(motor).
+pieza(aspas).
+pieza(interruptor).
+pieza(base).
+
+% Definir el estado de las piezas
+estado(bueno).
+estado(danado).
+
+% Regla si es irreparable
+irreparable(A, B, C, D) :- A = danado, B = danado, C = danado, D = danado.
+
+% Regla si es reparable
+reparable(A, B, C, D) :- \+ irreparable(A, B, C, D).
